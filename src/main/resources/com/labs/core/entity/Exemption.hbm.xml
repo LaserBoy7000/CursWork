@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "com.labs.core.entity">
+    <class name = "Exemption" table = "EXEMPTION">
+    <id name = "ID" type="int" column = "ID">
+        <generator class="native"/>
+    </id>
+    <property name="Title" column = "Title" type = "string"/>
+    <property name="Formula" column = "Formula" type = "string"/>
+    </class>
+</hibernate-mapping>

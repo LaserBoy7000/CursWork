@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "com.labs.core.entity">
+    <class name = "User" table = "USER">
+    <id name = "ID" type="int" column = "ID">
+        <generator class="native"/>
+    </id>
+
+    <property name="Name" column = "Name" type = "string"/>
+    <property name="Surname" column = "Surname" type = "string"/>
+    <property name="Children" column = "Children" type = "int"/>
+    <property name="ChildrenD" column = "ChildrenD" type = "int"/>
+    <property name="Password" column = "Password" type = "string"/>
+    <many-to-one column="ExemptionID" name="Exemption" class="Exemption" lazy="false" fetch="select"/>
+    <bag name="Incomes" cascade="all" fetch="select">
+        <key column="UserID"/>
+        <one-to-many name="Incomes" fetch="select" lazy="false" class="Income"/>
+    </bag>
+    </class>
+</hibernate-mapping>

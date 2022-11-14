@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "com.labs.core.entity">
+    <class name = "Income" table = "INCOME">
+    <id name = "ID" type="int" column = "ID">
+        <generator class="native"/>
+    </id>
+    <property name="Title" column = "Title" type = "string"/>
+    <property name="Date" column = "Date" type = "date"/>
+    <property name="Value" column = "Value" type = "double"/>
+    <property name="ValueTaxed" column = "ValueTaxed" type = "double"/>
+    <many-to-one name="User" column = "UserID" class="User" lazy="false" fetch="select"/>
+    <many-to-one constrained="true" column="ExemptionID" name="Exemption" class="Exemption" lazy="false" fetch="select"/>
+    <many-to-one constrained="true" column="TaxID" name="Tax" class="Tax" lazy="false" fetch="select"/>
+    </class>
+</hibernate-mapping>

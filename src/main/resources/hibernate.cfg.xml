@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+      <property name="show_sql">false</property>
+      <property name="format_sql">false</property>
+      <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+      <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+      <property name="hibernate.connection.url">jdbc:sqlite:appdb.db</property>
+      <property name="hibernate.allow_update_outside_transaction">true</property>
+      <property name="hibernate.hbm2ddl.auto">update</property>
+
+      <mapping resource = "com/labs/core/entity/Constant.hbm.xml"/> 
+      <mapping resource = "com/labs/core/entity/User.hbm.xml"/> 
+      <mapping resource = "com/labs/core/entity/Exemption.hbm.xml"/>
+      <mapping resource = "com/labs/core/entity/Tax.hbm.xml"/>
+      <mapping resource = "com/labs/core/entity/Income.hbm.xml"/>  
+   </session-factory>
+</hibernate-configuration>

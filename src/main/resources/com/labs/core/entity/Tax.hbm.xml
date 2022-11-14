@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package = "com.labs.core.entity">
+    <class name = "Tax" table = "TAX">
+    <id name = "ID" type="int" column = "ID">
+        <generator class="native"/>
+    </id>
+    <property name="Title" column = "Title" type = "string" unique="true"/>
+    <property name="TIPP" column = "TIPP" type = "double"/>
+    <property name="WC" column = "WC" type = "double"/>
+    <property name="AllowsExemption" column = "AllowsExemption" type = "boolean"/>
+    <property name="Formula" column="Formula" type="string"/>
+    </class>
+</hibernate-mapping>
